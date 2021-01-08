@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/python3
 import argparse
 from ipprocessing import getNetworkPrefix, ipStringToDecimal, ipToBinary, ipListToString, getCIDR, getMaxHosts
 
@@ -18,7 +18,7 @@ def main():
         networkPrefix = ipListToString(getNetworkPrefix(config.ip, config.netmask))
         netmaskBinary = ipToBinary(ipStringToDecimal(config.netmask))
 
-        print(f"Network: {networkPrefix}/{getCIDR(netmaskBinary)}")
+        print(f"Network CIDR: {networkPrefix}/{getCIDR(netmaskBinary)}")
         print(f"Hosts: {getMaxHosts(getCIDR(netmaskBinary))}")
         print(f"Network prefix: {networkPrefix}")
     else:
